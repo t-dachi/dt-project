@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ブログ記事用のルール
+    match /posts/{postId} {
+      allow read: if true;  // 本番環境でも読み取りを許可
+      allow write: if false;  // 書き込みは禁止（管理画面から追加する想定）
+    }
+
+    // その他のコレクションはデフォルトでアクセス禁止
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

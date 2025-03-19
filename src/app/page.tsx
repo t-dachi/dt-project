@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "ホーム",
+  description:
+    "技術ブログのホームページです。最新の記事や更新情報をお届けします。",
+  path: "/",
+};
+
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
